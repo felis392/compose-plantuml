@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  plantuml-server:
+    container_name: plantuml-server
+    build:
+      context: plantuml-server/build
+      dockerfile: Dockerfile
+      args:
+        context_path: plantuml
+    restart: always
+    ports:
+      - "8080"
+  nginx:
+    image: "nginx:stable"
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/log.d:/var/log/nginx
+      - ./nginx/cache.d:/var/cache/nginx
+      - ./nginx/tmp.d:/var/cache/nginx_tmp
+      - ./nginx/www.public:/var/www/public

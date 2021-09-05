@@ -1,0 +1,13 @@
+# NGINX
+nginx/log.d/*
+!nginx/log.d/.gitkeep
+
+nginx/cache.d/*
+!nginx/cache.d/.gitkeep
+
+nginx/tmp.d/*
+!nginx/tmp.d/.gitkeep
+
+# PLANTUML SERVER
+plantuml-server/log.d/*
+!plantuml-server/log.d/.gitkeep
