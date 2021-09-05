@@ -6,7 +6,10 @@
 
 ## 使い方
 
-このリポジトリをクローンして`docker compose up`コマンドを実行して起動するだけ。
+このリポジトリをクローンして`docker compose up`コマンドを実行して起動するだけ。  
+実行しているマシンのTCPポート80番にアクセスすれば利用できる。
+
+ローカルマシンで実行した場合のPlantUMLサーバーのURLは`http://localhost/plantuml`
 
 ## 詳しく
 
@@ -25,7 +28,7 @@ services:
         context_path: plantuml # ←ここ
     restart: always
     ports:
-      - "8080:8080"
+      - "8080"
 ```
 
 ```
